@@ -18,7 +18,7 @@ public class Orders {
     }
 
     @Test
-    public void OrderChromeBlack() {
+    public void orderChromeBlack() {
         OrderPage orderPage = new OrderPage(driver);
         MainPage mainPage = new MainPage(driver);
         driver.get("https://qa-scooter.praktikum-services.ru/");
@@ -32,7 +32,7 @@ public class Orders {
     }
 
     @Test
-    public void OrderChromeGray() {
+    public void orderChromeGray() {
         OrderPage orderPage = new OrderPage(driver);
         MainPage mainPage = new MainPage(driver);
         driver.get("https://qa-scooter.praktikum-services.ru/");

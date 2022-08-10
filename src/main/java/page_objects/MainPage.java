@@ -39,49 +39,49 @@ public class MainPage {
     private By listButton0 = By.id("accordion__heading-0");
 
     // О важном «Стоимось» текст
-    private static By textList0 = By.id("accordion__panel-0");
+    private By textList0 = By.id("accordion__panel-0");
 
     // О важном «Количество»
     private By listButton1 = By.id("accordion__heading-1");
 
     // О важном «Количество» текст
-    private static By textList1 = By.id("accordion__panel-1");
+    private By textList1 = By.id("accordion__panel-1");
 
     // О важном «Время аренды»
     private By listButton2 = By.id("accordion__heading-2");
 
     // О важном «Время аренды» текст
-    private static By textList2 = By.id("accordion__panel-2");
+    private By textList2 = By.id("accordion__panel-2");
 
     // О важном «Сегодня»
     private By listButton3 = By.id("accordion__heading-3");
 
     // О важном «Сегодня» текст
-    private static By textList3 = By.id("accordion__panel-3");
+    private By textList3 = By.id("accordion__panel-3");
 
     // О важном «Продление заказа»
     private By listButton4 = By.id("accordion__heading-4");
 
     // О важном «Продление заказа» текст
-    private static By textList4 = By.id("accordion__panel-4");
+    private By textList4 = By.id("accordion__panel-4");
 
     // О важном «Зарядка»
     private By listButton5 = By.id("accordion__heading-5");
 
     // О важном «Зарядка» текст
-    private static By textList5 = By.id("accordion__panel-5");
+    private By textList5 = By.id("accordion__panel-5");
 
     // О важном «Отмена»
     private By listButton6 = By.id("accordion__heading-6");
 
     // О важном «Отмена» текст
-    private static By textList6 = By.id("accordion__panel-6");
+    private By textList6 = By.id("accordion__panel-6");
 
     // О важном «За МКАДом»
     private By listButton7 = By.id("accordion__heading-7");
 
     // О важном «За МКАДом» текст
-    private static By textList7 = By.id("accordion__panel-7");
+    private By textList7 = By.id("accordion__panel-7");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -90,49 +90,49 @@ public class MainPage {
     public String clickListButton0() {
         clickElement(listButton0);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-0")));
-        return driver.findElement(MainPage.textList0).getText();
+        return driver.findElement(textList0).getText();
     }
 
     public String clickListButton1() {
         clickElement(listButton1);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-1")));
-        return driver.findElement(MainPage.textList1).getText();
+        return driver.findElement(textList1).getText();
     }
 
     public String clickListButton2() {
         clickElement(listButton2);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-2")));
-        return driver.findElement(MainPage.textList2).getText();
+        return driver.findElement(textList2).getText();
     }
 
     public String clickListButton3() {
         clickElement(listButton3);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-3")));
-        return driver.findElement(MainPage.textList3).getText();
+        return driver.findElement(textList3).getText();
     }
 
     public String clickListButton4() {
         clickElement(listButton4);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-4")));
-        return driver.findElement(MainPage.textList4).getText();
+        return driver.findElement(textList4).getText();
     }
 
     public String clickListButton5() {
         clickElement(listButton5);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-5")));
-        return driver.findElement(MainPage.textList5).getText();
+        return driver.findElement(textList5).getText();
     }
 
     public String clickListButton6() {
         clickElement(listButton6);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-6")));
-        return driver.findElement(MainPage.textList6).getText();
+        return driver.findElement(textList6).getText();
     }
 
     public String clickListButton7() {
         clickElement(listButton7);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.id("accordion__panel-7")));
-        return driver.findElement(MainPage.textList7).getText();
+        return driver.findElement(textList7).getText();
     }
 
     public void clickElement(By listButton) {
