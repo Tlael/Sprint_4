@@ -5,8 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import page_objects.OrderChrome;
-import page_objects.OrderPageObject;
+import page_objects.MainPage;
+import page_objects.OrderPage;
 
 public class Orders {
     private WebDriver driver;
@@ -14,30 +14,36 @@ public class Orders {
     @Before
     public void startUp() {
         WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
     }
 
     @Test
     public void OrderChromeBlack() {
-        OrderPageObject orderPageObject = new OrderPageObject();
-        driver = new ChromeDriver();
+        OrderPage orderPage = new OrderPage(driver);
+        MainPage mainPage = new MainPage(driver);
         driver.get("https://qa-scooter.praktikum-services.ru/");
-        OrderChrome Order = new OrderChrome(driver);
-        Order.getChromeOrderBlack();
+        mainPage.clickOrderRightButton();
+        orderPage.pageOne("Иван", "Иванов", "г. Москва, ул. Ленина, д. 1, кв. 1", "ВДНХ", "+79001111111");
+        orderPage.pageTwoField("24.04.2022", "Хочу красивый самокат для котика");
+        orderPage.setCheckColourBlack();
+        orderPage.pageTwoButton();
         String expected = "Посмотреть статус";
-        String actual = driver.findElement(orderPageObject.orderMassage).getText();
-        Assert.assertEquals("Заказ не оформлен", expected, actual);
+        Assert.assertEquals("Заказ не оформлен", expected, orderPage.actualMassage());
     }
 
     @Test
     public void OrderChromeGray() {
-        OrderPageObject orderPageObject = new OrderPageObject();
-        driver = new ChromeDriver();
+        OrderPage orderPage = new OrderPage(driver);
+        MainPage mainPage = new MainPage(driver);
         driver.get("https://qa-scooter.praktikum-services.ru/");
-        OrderChrome Order = new OrderChrome(driver);
-        Order.getChromeOrderGray();
+        mainPage.clickCookieButton();
+        mainPage.clickOrderButton();
+        orderPage.pageOne("Анна", "Кларк", "г. Москва, ул. Ленина, д. 10, кв. 11", "ВДНХ", "+79001111112");
+        orderPage.pageTwoField("29.04.2022", "I want a beautiful scooter for a cat");
+        orderPage.setCheckColourGray();
+        orderPage.pageTwoButton();
         String expected = "Посмотреть статус";
-        String actual = driver.findElement(orderPageObject.orderMassage).getText();
-        Assert.assertEquals("Заказ не оформлен", expected, actual);
+        Assert.assertEquals("Заказ не оформлен", expected, orderPage.actualMassage());
     }
 
     @After
